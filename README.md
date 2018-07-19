@@ -1,6 +1,8 @@
 # tensorflow-basic-classification-example
 a example of tensorflow keras basic-classification example
-based on the tensorflow doc: https://www.tensorflow.org/tutorials/keras/basic_classification
+based on the tensorflow doc:
+- https://www.tensorflow.org/tutorials/keras/basic_classification
+- https://www.tensorflow.org/tutorials/keras/basic_text_classification
 
 ## run
 ```bash
@@ -11,7 +13,12 @@ pip3 install matplotlib numpy scipy matplotlib ipython jupyter pandas sympy nose
 
 git clone git@github.com:zxdong262/tensorflow-basic-classification-example.git
 cd tensorflow-basic-classification-example
-python3 main.py
+
+# for image classification
+python3 image.py
+
+# for text classification
+python3 text.py
 
 ## if you miss any libs, just google and install it
 ```
@@ -33,8 +40,18 @@ just create/search a 28*28 greyscale image in one of these categories:
   'Ankle boot'
 ]
 ```
-then use it in `main.py`:
+then use it in `image.py`:
 ```python
 # grab a image to do the test
 img = misc.imread('./eg1-sneaker.png', flatten=True)
+```
+
+## test your own film comment
+just edit text.py
+```python
+# just copy a negative from imdb
+negative = '''<START> This is one of those awful films consisting of too many famous people acting out a plot that has no backbone in the vain hope that their collective fame will patch the holes in the story. I wouldn't wipe my ass with this script.'''
+
+# just copy a positive from imdb
+positive = '''<START> I have never seen such an amazing film since I saw The Shawshank Redemption. Shawshank encompasses friendships, hardships, hopes, and dreams. And what is so great about the movie is that it moves you, it gives you hope. Even though the circumstances between the characters and the viewers are quite different, you don't feel that far removed from what the characters are going through.'''
 ```

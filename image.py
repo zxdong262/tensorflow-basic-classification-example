@@ -7,7 +7,7 @@ from IPython import get_ipython
 import numpy as np
 import matplotlib.pyplot as plt
 
-print(tf.__version__)
+print('tensorflow version:', tf.__version__)
 ipy = get_ipython()
 fashion_mnist = keras.datasets.fashion_mnist
 
