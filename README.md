@@ -20,6 +20,9 @@ python3 image.py
 # for text classification
 python3 text.py
 
+# text classification with weight regularization and dropout
+python3 text-adjust.py
+
 ## if you miss any libs, just google and install it
 ```
 
