@@ -50,18 +50,9 @@ print('Test accuracy:', test_acc)
 # Grab an image from the test dataset
 img = test_images[0]
 
-# im = Image.fromarray(img, mode='F')
-# print(im, 'img----------------')
-# im.convert('RGB')
-# print(im, 'img----------------')
-# im = im.convert('L')
-# im.save('./nn.png')
-
-print(img, img.shape)
 img = (np.expand_dims(img, 0))
 predictions1 = model.predict(img)
 prediction1 = predictions1[0]
-print(test_labels[0], prediction1)
 print(
   'predict test image as:',
   class_names[
@@ -71,18 +62,9 @@ print(
 
 
 img1 = 1 - np.array(Image.open('./eg1-sneaker.png')) / 255.0
-
-# def grey(n):
-#   return n/255
-
-# vec = np.vectorize(grey)
-# img1 = vec(img1)
-print('img1, img1.shape')
-print(img1, img1.shape)
 img1 = (np.expand_dims(img1, 0))
 predictions2 = model.predict(img1)
 prediction2 = predictions2[0]
-print(prediction2)
 print(
   'predict custom image as:',
   class_names[
