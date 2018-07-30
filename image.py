@@ -1,15 +1,12 @@
 # TensorFlow and tf.keras
 import tensorflow as tf
-from scipy import misc
 from tensorflow import keras
-from IPython import get_ipython
+from PIL import Image
 # Helper libraries
 import numpy as np
-import matplotlib.pyplot as plt
 
 print('tensorflow version:', tf.__version__)
 
-ipy = get_ipython()
 fashion_mnist = keras.datasets.fashion_mnist
 
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
@@ -31,18 +28,6 @@ train_images = train_images / 255.0
 
 test_images = test_images / 255.0
 
-if ipy is not None:
-    ipy.run_line_magic('matplotlib', 'inline')
-
-plt.figure(figsize=(10,10))
-for i in range(25):
-  plt.subplot(5,5,i+1)
-  plt.xticks([])
-  plt.yticks([])
-  plt.grid(False)
-  plt.imshow(train_images[i], cmap='binary')
-  plt.xlabel(class_names[train_labels[i]])
-
 model = keras.Sequential([
   keras.layers.Flatten(input_shape=(28, 28)),
   keras.layers.Dense(128, activation=tf.nn.relu),
@@ -61,42 +46,46 @@ test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 print('Test accuracy:', test_acc)
 
-predictions = model.predict(test_images)
-
-np.argmax(predictions[0])
-
-plt.figure(figsize=(10,10))
-for i in range(25):
-    plt.subplot(5,5,i+1)
-    plt.xticks([])
-    plt.yticks([])
-    plt.grid(False)
-    plt.imshow(test_images[i], cmap='binary')
-    predicted_label = np.argmax(predictions[i])
-    true_label = test_labels[i]
-    if predicted_label == true_label:
-      color = 'green'
-    else:
-      color = 'red'
-    plt.xlabel("{} ({})".format(
-      class_names[predicted_label],
-      class_names[true_label]),
-      color=color
-    )
 
 # Grab an image from the test dataset
-# img = test_images[0]
+img = test_images[0]
 
-# grab a image to do the test
-img = misc.imread('./eg1-sneaker.png', flatten=True)
+# im = Image.fromarray(img, mode='F')
+# print(im, 'img----------------')
+# im.convert('RGB')
+# print(im, 'img----------------')
+# im = im.convert('L')
+# im.save('./nn.png')
 
-img = (np.expand_dims(img,0))
+print(img, img.shape)
+img = (np.expand_dims(img, 0))
 predictions1 = model.predict(img)
 prediction1 = predictions1[0]
-
+print(test_labels[0], prediction1)
 print(
-  'predict image as:',
+  'predict test image as:',
   class_names[
     np.argmax(prediction1)
+  ]
+)
+
+
+img1 = 1 - np.array(Image.open('./eg1-sneaker.png')) / 255.0
+
+# def grey(n):
+#   return n/255
+
+# vec = np.vectorize(grey)
+# img1 = vec(img1)
+print('img1, img1.shape')
+print(img1, img1.shape)
+img1 = (np.expand_dims(img1, 0))
+predictions2 = model.predict(img1)
+prediction2 = predictions2[0]
+print(prediction2)
+print(
+  'predict custom image as:',
+  class_names[
+    np.argmax(prediction2)
   ]
 )
