@@ -13,6 +13,7 @@ pip3 install matplotlib numpy scipy matplotlib ipython jupyter pandas sympy nose
 
 git clone git@github.com:zxdong262/tensorflow-basic-classification-example.git
 cd tensorflow-basic-classification-example
+npm i
 
 # for image classification
 python3 image.py
@@ -22,6 +23,9 @@ python3 text.py
 
 # text classification with weight regularization and dropout
 python3 text-adjust.py
+
+# text recognition: random char image
+python3 char.py
 
 ## if you miss any libs, just google and install it
 ```
