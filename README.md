@@ -50,7 +50,7 @@ just create/search a 28*28 greyscale image in one of these categories:
 then use it in `image.py`:
 ```python
 # grab a image to do the test
-img = misc.imread('./eg1-sneaker.png', flatten=True)
+img1 = 1 - np.array(Image.open('./eg1-sneaker.png')) / 255.0
 ```
 
 ## test your own film comment
