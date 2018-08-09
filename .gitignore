@@ -105,3 +105,4 @@ venv.bak/
 /temp/
 /node_modules/
 /package-lock.json
+/example.png

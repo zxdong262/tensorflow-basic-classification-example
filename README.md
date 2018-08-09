@@ -24,7 +24,7 @@ python3 text.py
 # text classification with weight regularization and dropout
 python3 text-adjust.py
 
-# text recognition: random char image
+# text recognition: random single char image
 python3 char.py
 
 ## if you miss any libs, just google and install it
@@ -62,3 +62,6 @@ negative = '''<START> This is one of those awful films consisting of too many fa
 # just copy a positive from imdb
 positive = '''<START> I have never seen such an amazing film since I saw The Shawshank Redemption. Shawshank encompasses friendships, hardships, hopes, and dreams. And what is so great about the movie is that it moves you, it gives you hope. Even though the circumstances between the characters and the viewers are quite different, you don't feel that far removed from what the characters are going through.'''
 ```
+
+## a little more complicated exmaple: captcha reader
+https://github.com/zxdong262/tf-captcha-reader
