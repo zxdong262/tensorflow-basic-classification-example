@@ -1,4 +1,4 @@
-# tensorflow-basic-classification-example
+# tensorflow-basic-example
 a example of tensorflow keras basic-classification example
 based on the tensorflow doc:
 - https://www.tensorflow.org/tutorials/keras/basic_classification
@@ -11,8 +11,8 @@ based on the tensorflow doc:
 sudo apt-get install python3-pip python3-tk
 pip3 install matplotlib numpy scipy matplotlib ipython jupyter pandas sympy nose --user
 
-git clone git@github.com:zxdong262/tensorflow-basic-classification-example.git
-cd tensorflow-basic-classification-example
+git clone git@github.com:zxdong262/tensorflow-basic-example.git
+cd tensorflow-basic-example
 npm i
 
 # for image classification
