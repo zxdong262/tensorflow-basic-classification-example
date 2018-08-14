@@ -61,7 +61,7 @@ print(
 )
 
 # grab a image from internet
-img1 = 1 - np.array(Image.open('./eg1-sneaker.png')) / 255.0
+img1 = 1 - np.array(Image.open('../data/eg1-sneaker.png')) / 255.0
 img1 = (np.expand_dims(img1, 0))
 predictions2 = model.predict(img1)
 prediction2 = predictions2[0]

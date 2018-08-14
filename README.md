@@ -7,26 +7,27 @@ based on the tensorflow doc:
 ```bash
 
 # install Helper libraries, for ubuntu 16.04 only
+## if you miss any libs, just google and install it
 sudo apt-get install python3-pip python3-tk
 pip3 install matplotlib numpy scipy matplotlib ipython jupyter pandas sympy nose --user
+
 
 git clone git@github.com:zxdong262/tensorflow-basic-examples.git
 cd tensorflow-basic-examples
 npm i
 
 # for image classification
-python3 image.py
+python3 examples/image.py
 
 # for text classification
-python3 text.py
+python3 examples/text.py
 
 # text classification with weight regularization and dropout
-python3 text-adjust.py
+python3 examples/text-adjust.py
 
 # text recognition: random single char image
-python3 char.py
+python3 examples/char.py
 
-## if you miss any libs, just google and install it
 ```
 
 
@@ -49,7 +50,7 @@ just create/search a 28*28 greyscale image in one of these categories:
 then use it in `image.py`:
 ```python
 # grab a image to do the test
-img1 = 1 - np.array(Image.open('./eg1-sneaker.png')) / 255.0
+img1 = 1 - np.array(Image.open('../data/eg1-sneaker.png')) / 255.0
 ```
 
 ## test your own film comment
