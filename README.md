@@ -16,17 +16,23 @@ git clone git@github.com:zxdong262/tensorflow-basic-examples.git
 cd tensorflow-basic-examples
 npm i
 
-# for image classification
+# for image classification official example
 python3 examples/image.py
 
-# for text classification
+# for text classification official example
 python3 examples/text.py
 
-# text classification with weight regularization and dropout
+# text classification with weight regularization and dropout official example
 python3 examples/text-adjust.py
 
 # text recognition: random single char image
 python3 examples/char.py
+
+# regression official example
+python3 examples/regression.py
+
+# regression with simple equation of linear regression
+python3 examples/regression-demo.py
 
 ```
 
